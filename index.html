@@ -162,19 +162,50 @@
         width: 100%;
       }
     }
+
+    .timer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 30px 0;
+  }
+
+  .timer-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timer-image {
+  width: 180px;      /* Adjust size */
+  height: auto;
+  }
+    
   </style>
 </head>
 <body>
   <main class="app">
     <h1>Shared 33-Second Timer</h1>
+
+    <img src="pinkbean.png" alt="Pinkbean" class="timer-image">
+
     <p class="subtitle">Host-controlled, synchronized, and automatically repeating</p>
 
     <div id="setupWarning" class="setup-warning">
       Firebase is not configured yet. Replace the firebaseConfig values in this HTML file before publishing it.
     </div>
 
-    <div id="timer" class="timer">33</div>
-    <div id="status" class="status">Connecting...</div>
+    <div class="timer-row">
+
+      <img src="pinkbean.png" alt="Pinkbean" class="timer-image">
+
+      <div class="timer-panel">
+        <div id="timer" class="timer">33</div>
+        <div id="status" class="status">Connecting...</div>
+      </div>
+
+    </div>
 
     <div id="hostControls" class="controls" hidden>
       <button id="startBtn">Start</button>
