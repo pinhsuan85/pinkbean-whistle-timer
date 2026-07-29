@@ -174,7 +174,7 @@
     </div>
 
     <div id="timer" class="timer">33</div>
-    <div id="status" class="status">Connecting??/div>
+    <div id="status" class="status">Connecting...</div>
 
     <div id="hostControls" class="controls" hidden>
       <button id="startBtn">Start</button>
@@ -205,10 +205,6 @@
 
     const TIMER_SECONDS = 33;
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -221,8 +217,6 @@ const firebaseConfig = {
   appId: "1:521748293415:web:7336ee9f3a0224647aeb02"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
     const params = new URLSearchParams(window.location.search);
     const isHost = params.get("host") === "1";
 
@@ -295,7 +289,7 @@ const app = initializeApp(firebaseConfig);
       timerEl.textContent = String(remaining).padStart(2, "0");
 
       if (timerState.running) {
-        statusEl.textContent = "Running ??automatically repeats every 33 seconds";
+        statusEl.textContent = "Running - automatically repeats every 33 seconds";
       } else {
         statusEl.textContent = remaining === TIMER_SECONDS ? "Ready" : "Paused";
       }
