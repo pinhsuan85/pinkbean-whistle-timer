@@ -218,7 +218,11 @@ const firebaseConfig = {
 };
 
     const params = new URLSearchParams(window.location.search);
-    const isHost = params.get("host") === "1";
+    const HOST_KEY = "Lugia";   // choose any password
+
+const isHost =
+    params.get("host") === "1" &&
+    params.get("key") === HOST_KEY;
 
     let roomId = params.get("room");
     if (!roomId) {
