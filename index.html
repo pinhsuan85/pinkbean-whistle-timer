@@ -198,7 +198,7 @@
       <img src="pinkbean.png" alt="Pinkbean" class="timer-image">
 
       <div class="timer-panel">
-        <div id="timer" class="timer">33</div>
+        <div id="timer" class="timer">120</div>
         <div id="status" class="status">Connecting...</div>
       </div>
 
@@ -319,7 +319,7 @@ const isHost =
     function render() {
       const remaining = computeRemaining(timerState);
       timerEl.textContent = String(remaining).padStart(2, "0");
-      if (remaining <= 5) {
+      if (remaining <= 10) {
         timerEl.style.color = "#ef4444";
       } else {
         timerEl.style.color = "#f9fafb";
