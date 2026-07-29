@@ -291,6 +291,11 @@ const isHost =
     function render() {
       const remaining = computeRemaining(timerState);
       timerEl.textContent = String(remaining).padStart(2, "0");
+      if (remaining <= 5) {
+        timerEl.style.color = "#ef4444";
+      } else {
+        timerEl.style.color = "#f9fafb";
+      }
 
       if (timerState.running) {
         statusEl.textContent = "Running - automatically repeats every 33 seconds";
